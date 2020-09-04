@@ -110,11 +110,23 @@ function install_flutter()
     if ! [ -x "$(command -v flutter)" ]
     then
         echo "install flutter"
-        # 修改环境
-        echo export PUB_HOSTED_URL=https://pub.flutter-io.cn >> ~/.zshrc
-        echo export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn >> ~/.zshrc
-        echo export PATH=~/Develop/flutter/bin:$PATH >> ~/.zshrc
-        source ~/.zshrc
+
+        record=`cat ~/.zshrc | grep PUB_HOSTED_URL`
+        if [ ${#record} = 0 ]
+        then
+            echo "update PUB_HOSTED_URL .zshrc"
+            echo export PUB_HOSTED_URL=https://pub.flutter-io.cn >> ~/.zshrc
+            source ~/.zshrc
+        fi
+
+        record=`cat ~/.zshrc | grep FLUTTER_STORAGE_BASE_URL`
+        if [ ${#record} = 0 ]
+        then
+            echo "update FLUTTER_STORAGE_BASE_URL .zshrc"
+            echo export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn >> ~/.zshrc
+            source ~/.zshrc
+        fi
+
         brew cask install flutter
     fi
 }
