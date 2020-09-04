@@ -9,8 +9,8 @@ def dependencies():
     pass
 
 def check():
-    path = os.system("which tree")
-    return False
+    path = os.popen("which trees")
+    return len(path.readlines()) > 0
 
 def install():
     
