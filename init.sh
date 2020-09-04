@@ -82,7 +82,8 @@ function install_node()
 # 安装flutter
 function install_flutter()
 {
-
+    install_homebrew
+    brew install flutter
 }
 
 # 安装Chrome
@@ -113,16 +114,12 @@ function install_vscode()
     brew install visual-studio-code
 }
 
-
-{
-    # brew cask install  lantern appcode 
-    # brew cask install flutter && flutter upgrade
-}
-
 # 先判断Xcode是否已安装
 xcode_path=/Applications/Xcode.app
 if  [ -d $xcode_path ];then
-    install_applications
+    install_tree
+    install_cocoapods
+    install_node
 else
     echo "install xcode to continue"
 fi
