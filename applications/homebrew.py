@@ -11,17 +11,17 @@ def dependencies():
     hosts.api_github_com()
     pass
 
-def check():
+def is_installed():
     path = os.popen("which brew")
     return len(path.readlines()) > 0
 
 def install():
     dependencies()
-    if not check():
+    if not is_installed():
         os.system("brew install wget")
 
 def uninstall():
-    if check():
+    if is_installed():
         os.system("brew uninstall wget && rm -fr /usr/local/etc/wgetrc")
 
 check()
