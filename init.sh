@@ -115,7 +115,7 @@ function install_flutter()
         echo export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn >> ~/.zshrc
         echo export PATH=~/Develop/flutter/bin:$PATH >> ~/.zshrc
         source ~/.zshrc
-        brew install flutter
+        brew cask install flutter
     fi
 }
 
