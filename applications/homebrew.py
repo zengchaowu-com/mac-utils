@@ -16,5 +16,3 @@ def install():
 
 def uninstall():
     pass
-
-print(check())
