@@ -5,7 +5,7 @@
 function update_gem_sources()
 {
     sources=`gem sources -l | grep gems.ruby-china.com`
-    if [ ${#record} = 0 ]
+    if [ ${#sources} = 0 ]
     then
         gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
     fi
@@ -14,21 +14,23 @@ function update_gem_sources()
 # 修改Hosts
 function update_hosts()
 {
-    sudo chmod 777 /etc/hosts
     
     record=`cat /etc/hosts | grep raw.githubusercontent.com`
     if [ ${#record} = 0 ];then
         echo "update raw.githubusercontent.com dns"
+        sudo chmod 777 /etc/hosts
         sudo echo 151.101.108.133 raw.githubusercontent.com >> /etc/hosts
+        sudo chmod 755 /etc/hosts
     fi
     
     record=`cat /etc/hosts | grep api.github.com`
     if [ ${#record} = 0 ];then
         echo "update api.github.com dns"
+        sudo chmod 777 /etc/hosts
         sudo echo 13.250.94.254 api.github.com >> /etc/hosts
+        sudo chmod 755 /etc/hosts
     fi
     
-    sudo chmod 755 /etc/hosts
 }
 
 # 安装Homebrew
