@@ -16,7 +16,8 @@ function update_hosts()
 {
     
     record=`cat /etc/hosts | grep raw.githubusercontent.com`
-    if [ ${#record} = 0 ];then
+    if [ ${#record} = 0 ]
+    then
         echo "update raw.githubusercontent.com dns"
         sudo chmod 777 /etc/hosts
         sudo echo 151.101.108.133 raw.githubusercontent.com >> /etc/hosts
@@ -24,7 +25,8 @@ function update_hosts()
     fi
     
     record=`cat /etc/hosts | grep api.github.com`
-    if [ ${#record} = 0 ];then
+    if [ ${#record} = 0 ]
+    then
         echo "update api.github.com dns"
         sudo chmod 777 /etc/hosts
         sudo echo 13.250.94.254 api.github.com >> /etc/hosts
@@ -38,7 +40,8 @@ function install_homebrew()
 {
     update_gem_sources
     update_hosts
-    if ! [ -x "$(command -v brew)" ]; then
+    if ! [ -x "$(command -v brew)" ]
+    then
         echo "install homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     fi
@@ -48,7 +51,8 @@ function install_homebrew()
 function install_cocoapods()
 {
     install_homebrew
-    if ! [ -x "$(command -v cocoapods)" ]; then
+    if ! [ -x "$(command -v cocoapods)" ]
+    then
         echo "install cocoapods"
         brew install cocoapods
     fi
@@ -58,7 +62,8 @@ function install_cocoapods()
 function install_fastlane()
 {
     install_homebrew
-    if ! [ -x "$(command -v fastlane)" ]; then
+    if ! [ -x "$(command -v fastlane)" ]
+    then
         echo "install fastlane"
         brew install fastlane
     fi
@@ -68,7 +73,8 @@ function install_fastlane()
 function install_tree()
 {
     install_homebrew
-    if ! [ -x "$(command -v tree)" ]; then
+    if ! [ -x "$(command -v tree)" ]
+    then
         echo "install tree"
         brew install tree
     fi
@@ -78,7 +84,8 @@ function install_tree()
 function install_node()
 {
     install_homebrew
-    if ! [ -x "$(command -v node)" ]; then
+    if ! [ -x "$(command -v node)" ]
+    then
         echo "install node"
         brew install node
         npm install yarn -g
@@ -122,7 +129,8 @@ function install_vscode()
 
 # 先判断Xcode是否已安装
 xcode_path=/Applications/Xcode.app
-if  [ -d $xcode_path ];then
+if  [ -d $xcode_path ]
+then
     install_tree
     install_cocoapods
     install_node
