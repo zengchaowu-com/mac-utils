@@ -43,7 +43,6 @@ function install_applications()
     brew cask install google-chrome lantern appcode visual-studio-code
 }
 
-
 # 先判断Xcode是否已安装
 xcode_path=/Applications/Xcode.app
 if  [ -d $xcode_path ];then
