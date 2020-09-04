@@ -4,7 +4,11 @@
 # 修改Gem源
 function update_gem_sources()
 {
-    gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+    sources=`gem sources -l | grep gems.ruby-china.com`
+    if [ ${#record} = 0 ]
+    then
+        gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+    fi
 }
 
 # 修改Hosts
