@@ -185,7 +185,7 @@ then
     install_fastlane
     install_node
 
-    # install_flutter
+    install_flutter
 
     install_chrome
     install_lantern
