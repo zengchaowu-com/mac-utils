@@ -18,11 +18,15 @@ def is_installed():
 def install():
     dependencies()
     if not is_installed():
-        os.system("brew install wget")
+        os.system("""
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+        """)
 
 def uninstall():
     if is_installed():
-        os.system("brew uninstall wget && rm -fr /usr/local/etc/wgetrc")
+        os.system("""
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+        """)
 
 check()
 install()

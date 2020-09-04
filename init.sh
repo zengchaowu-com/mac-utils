@@ -1,38 +1,6 @@
 #!/bin/bash
 # 初始化系统 此脚本用于第一次初始化电脑
 
-# 修改Gem源
-function update_gem_sources()
-{
-    sources=`gem sources -l | grep gems.ruby-china.com`
-    if [ ${#sources} = 0 ]
-    then
-        gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
-    fi
-}
-
-# 修改Hosts
-function update_hosts()
-{
-    
-    record=`cat /etc/hosts | grep raw.githubusercontent.com`
-    if [ ${#record} = 0 ]
-    then
-        echo "update raw.githubusercontent.com dns"
-        
-    fi
-    
-    record=`cat /etc/hosts | grep api.github.com`
-    if [ ${#record} = 0 ]
-    then
-        echo "update api.github.com dns"
-        sudo chmod 777 /etc/hosts
-        sudo echo 13.250.94.254 api.github.com >> /etc/hosts
-        sudo chmod 755 /etc/hosts
-    fi
-    
-}
-
 # 安装Homebrew
 function install_homebrew()
 {
@@ -41,7 +9,7 @@ function install_homebrew()
     if ! [ -x "$(command -v brew)" ]
     then
         echo "install homebrew"
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+        
     fi
 }
 
