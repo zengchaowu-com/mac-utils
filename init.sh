@@ -20,6 +20,13 @@ function update_hosts()
     sudo chmod 755 /etc/hosts
 }
 
+# 安装Homebrew
+function install_homebrew()
+{
+    update_hosts
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+}
+
 
 # 先判断Xcode是否已安装
 xcode_path=/Applications/Xcode.app
