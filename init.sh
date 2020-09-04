@@ -135,7 +135,8 @@ function install_flutter()
 function install_chrome()
 {
     install_homebrew
-    if  [ -d /Applications/Google\ Chrome.app ]
+    path=/Applications/Google\ Chrome.app
+    if ! [ -d $path ]
     then
         brew cask install google-chrome
     fi
@@ -145,7 +146,8 @@ function install_chrome()
 function install_lantern()
 {
     install_homebrew
-    if  [ -d /Applications/Lantern.app ]
+    path=/Applications/Lantern.app
+    if ! [ -d $path ]
     then
         brew cask install lantern
     fi
@@ -155,7 +157,8 @@ function install_lantern()
 function install_appcode()
 {
     install_homebrew
-    if  [ -d /Applications/AppCode.app ]
+    path=/Applications/AppCode.app
+    if ! [ -d $path ]
     then
         brew cask install appcode
     fi
