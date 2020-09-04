@@ -151,7 +151,7 @@ function install_vscode()
 function install_android_studio()
 {
     install_homebrew
-    path='/Applications/Visual Studio Code.app'
+    path='/Applications/Android Studio.app'
     if ! [ -d "$path" ]
     then
         brew cask install android-studio
