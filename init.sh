@@ -46,8 +46,14 @@ function install_applications()
         brew install tree
     fi
 
-    if ! [ -x "$(command -v tree)" ]; then
-        brew install tree
+    if ! [ -x "$(command -v fastlane)" ]; then
+        echo "install fastlane"
+        brew install fastlane
+    fi
+
+    if ! [ -x "$(command -v cocoapods)" ]; then
+        echo "install cocoapods"
+        brew install cocoapods
     fi
 
     # wget node fastlane cocoapods
