@@ -135,8 +135,8 @@ function install_flutter()
 function install_chrome()
 {
     install_homebrew
-    path="""/Applications/Google Chrome.app"""
-    if ! [ -d $path ]
+    path='/Applications/Google Chrome.app'
+    if ! [ -d "$path" ]
     then
         brew cask install google-chrome
     fi
@@ -146,8 +146,8 @@ function install_chrome()
 function install_lantern()
 {
     install_homebrew
-    path=/Applications/Lantern.app
-    if ! [ -d $path ]
+    path='/Applications/Lantern.app'
+    if ! [ -d "$path" ]
     then
         brew cask install lantern
     fi
@@ -168,16 +168,16 @@ function install_appcode()
 function install_vscode()
 {
     install_homebrew
-    path="""/Applications/Visual Studio Code.app"""
-    if ! [ -d $path ]
+    path='/Applications/Visual Studio Code.app'
+    if ! [ -d "$path" ]
     then
         brew cask install visual-studio-code
     fi
 }
 
 # 先判断Xcode是否已安装
-xcode_path=/Applications/Xcode.app
-if  [ -d $xcode_path ]
+xcode_path='/Applications/Xcode.app'
+if  [ -d "$xcode_path" ]
 then
     install_tree
     install_wget
