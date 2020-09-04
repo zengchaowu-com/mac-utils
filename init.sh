@@ -35,30 +35,78 @@ function install_homebrew()
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 }
 
-# 安装常用软件
-function install_applications()
+# 安装cocoapods
+function install_cocoapods()
 {
-    # install_homebrew
-
-
-    if ! [ -x "$(command -v tree)" ]; then
-        echo "install tree"
-        brew install tree
-    fi
-
-    if ! [ -x "$(command -v fastlane)" ]; then
-        echo "install fastlane"
-        brew install fastlane
-    fi
-
+    install_homebrew
     if ! [ -x "$(command -v cocoapods)" ]; then
         echo "install cocoapods"
         brew install cocoapods
     fi
+}
 
-    # wget node fastlane cocoapods
-    # npm install yarn -g
-    # brew cask install google-chrome lantern appcode visual-studio-code
+# 安装fastlane
+function install_fastlane()
+{
+    install_homebrew
+    if ! [ -x "$(command -v fastlane)" ]; then
+        echo "install fastlane"
+        brew install fastlane
+    fi
+}
+
+# 安装tree
+function install_tree()
+{
+    install_homebrew
+    if ! [ -x "$(command -v tree)" ]; then
+        echo "install tree"
+        brew install tree
+    fi
+}
+
+# 安装node
+function install_node()
+{
+    install_homebrew
+    if ! [ -x "$(command -v node)" ]; then
+        echo "install node"
+        brew install node
+        npm install yarn -g
+    fi
+}
+
+# 安装Chrome
+function install_chrome()
+{
+    install_homebrew
+    brew install google-chrome
+}
+
+# 安装Lantern
+function install_lantern()
+{
+    install_homebrew
+    brew install lantern
+}
+
+# 安装Appcode
+function install_appcode()
+{
+    install_homebrew
+    brew install appcode
+}
+
+# 安装VSCode
+function install_vscode()
+{
+    install_homebrew
+    brew install visual-studio-code
+}
+
+
+{
+    # brew cask install  lantern appcode 
     # brew cask install flutter && flutter upgrade
 }
 
