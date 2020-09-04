@@ -3,9 +3,13 @@
 
 import os
 
-def ruby_china():
-    sources=os.popen("gem sources -l | grep gems.ruby-china.com")
-    if len(sources.readlines()) == 0 :
-        os.system("gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/")
+def raw_githubusercontent_com():
+    records=os.popen("cat /etc/hosts | grep raw.githubusercontent.com")
+    if len(records.readlines()) == 0 :
+        os.system("""
+        sudo chmod 777 /etc/hosts
+        sudo echo 151.101.108.133 raw.githubusercontent.com >> /etc/hosts
+        sudo chmod 755 /etc/hosts
+        """)
 
-ruby_china()
+raw_githubusercontent_com()

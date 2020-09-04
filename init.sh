@@ -19,9 +19,7 @@ function update_hosts()
     if [ ${#record} = 0 ]
     then
         echo "update raw.githubusercontent.com dns"
-        sudo chmod 777 /etc/hosts
-        sudo echo 151.101.108.133 raw.githubusercontent.com >> /etc/hosts
-        sudo chmod 755 /etc/hosts
+        
     fi
     
     record=`cat /etc/hosts | grep api.github.com`
