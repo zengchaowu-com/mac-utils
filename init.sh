@@ -196,13 +196,13 @@ then
     install_fastlane
     install_node
 
-    install_flutter
-
     install_chrome
     install_lantern
     install_appcode
     install_vscode
-    install_androidstudio
+    install_studio
+
+    install_flutter
 
 else
     echo "install xcode to continue"
