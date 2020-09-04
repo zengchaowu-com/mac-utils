@@ -31,7 +31,16 @@ function update_hosts()
 function install_homebrew()
 {
     update_hosts
+    update_gem_sources
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+}
+
+# 安装常用软件
+function install_application()
+{
+    brew install tree wget fastlane cocoapods
+    brew cask install google-chrome lantern appcode visual-studio-code
+
 }
 
 
