@@ -11,13 +11,13 @@ function update_gem_sources()
 function update_hosts()
 {
     sudo chmod 777 /etc/hosts
-
+    
     record=`cat /etc/hosts | grep raw.githubusercontent.com`
     if [ ${#record} = 0 ];then
         echo "update raw.githubusercontent.com dns"
         sudo echo 151.101.108.133 raw.githubusercontent.com >> /etc/hosts
     fi
-
+    
     record=`cat /etc/hosts | grep api.github.com`
     if [ ${#record} = 0 ];then
         echo "update api.github.com dns"
@@ -38,11 +38,22 @@ function install_homebrew()
 # 安装常用软件
 function install_applications()
 {
-    install_homebrew
-    brew install tree wget node fastlane cocoapods
-    npm install yarn -g
-    brew cask install google-chrome lantern appcode visual-studio-code
-    brew cask install flutter && flutter upgrade
+    # install_homebrew
+
+
+    if ! [ -x "$(command -v tree)" ]; then
+        echo "install tree"
+        brew install tree
+    fi
+
+    if ! [ -x "$(command -v tree)" ]; then
+        brew install tree
+    fi
+
+    # wget node fastlane cocoapods
+    # npm install yarn -g
+    # brew cask install google-chrome lantern appcode visual-studio-code
+    # brew cask install flutter && flutter upgrade
 }
 
 # 先判断Xcode是否已安装
