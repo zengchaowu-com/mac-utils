@@ -20,4 +20,6 @@ def uninstall():
     if check():
         os.system("brew uninstall tree")
 
-print(check())
+check()
+install()
+uninstall()
