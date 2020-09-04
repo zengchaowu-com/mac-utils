@@ -40,6 +40,7 @@ function install_applications()
 {
     install_homebrew
     brew install tree wget node fastlane cocoapods
+    npm install yarn -g
     brew cask install google-chrome lantern appcode visual-studio-code
     brew cask install flutter && flutter upgrade
 }
