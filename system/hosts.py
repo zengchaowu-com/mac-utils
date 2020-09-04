@@ -22,3 +22,4 @@ def api_github_com():
         """)
 
 raw_githubusercontent_com()
+api_github_com()
