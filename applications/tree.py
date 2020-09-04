@@ -10,7 +10,7 @@ def dependencies():
 
 def check():
     path = os.system("which tree")
-    return path
+    return False
 
 def install():
     

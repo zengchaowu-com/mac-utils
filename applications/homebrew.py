@@ -7,10 +7,11 @@ def dependencies():
     pass
 
 def check():
-    return False
+    # return False
+    pass
 
 def install():
-    os.system("brew install tree")
+    # os.system("brew install tree")
     pass
 
 def uninstall():
