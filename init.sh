@@ -110,7 +110,7 @@ function install_flutter()
     if ! [ -x "$(command -v flutter)" ]
     then
         echo "install flutter"
-
+        touch ~/.zshrc
         record=`cat ~/.zshrc | grep PUB_HOSTED_URL`
         if [ ${#record} = 0 ]
         then
