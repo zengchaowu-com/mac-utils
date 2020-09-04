@@ -21,5 +21,6 @@ def uninstall():
         os.system("brew uninstall tree")
 
 check()
+print(check())
 install()
 uninstall()
