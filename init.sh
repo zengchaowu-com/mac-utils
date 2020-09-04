@@ -76,6 +76,12 @@ function install_node()
     fi
 }
 
+# 安装flutter
+function install_flutter()
+{
+    
+}
+
 # 安装Chrome
 function install_chrome()
 {
