@@ -25,7 +25,7 @@ def install():
 def uninstall():
     if is_installed():
         os.system("""
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
         """)
 
 check()
