@@ -32,7 +32,10 @@ function install_homebrew()
 {
     update_gem_sources
     update_hosts
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    if ! [ -x "$(command -v brew)" ]; then
+        echo "install homebrew"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    fi
 }
 
 # 安装cocoapods
@@ -79,7 +82,7 @@ function install_node()
 # 安装flutter
 function install_flutter()
 {
-    
+
 }
 
 # 安装Chrome
