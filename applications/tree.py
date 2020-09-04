@@ -7,6 +7,7 @@ def check():
     return False
 
 def install():
+    os.system("brew install tree")
     pass
 
 def uninstall():
