@@ -13,10 +13,9 @@ def check():
     return len(path.readlines()) > 0
 
 def install():
-    
-    pass
+    return os.system("brew install tree")
 
 def uninstall():
-    pass
+    return os.system("brew uninstall tree")
 
 print(check())
