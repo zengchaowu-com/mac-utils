@@ -12,7 +12,6 @@ def dependencies():
     pass
 
 def check():
-    dependencies()
     path = os.popen("which brew")
     return len(path.readlines()) > 0
 
@@ -22,7 +21,6 @@ def install():
         os.system("brew install wget")
 
 def uninstall():
-    dependencies()
     if check():
         os.system("brew uninstall wget && rm -fr /usr/local/etc/wgetrc")
 
