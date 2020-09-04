@@ -135,21 +135,30 @@ function install_flutter()
 function install_chrome()
 {
     install_homebrew
-    brew cask install google-chrome
+    if  [ -d '/Applications/Google\ Chrome.app' ]
+    then
+        brew cask install google-chrome
+    fi
 }
 
 # 安装Lantern
 function install_lantern()
 {
     install_homebrew
-    brew cask install lantern
+    if  [ -d "/Applications/Lantern.app" ]
+    then
+        brew cask install lantern
+    fi
 }
 
 # 安装Appcode
 function install_appcode()
 {
     install_homebrew
-    brew cask install appcode
+    if  [ -d "/Applications/AppCode.app" ]
+    then
+        brew cask install appcode
+    fi
 }
 
 # 安装VSCode
