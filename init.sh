@@ -157,8 +157,8 @@ function install_lantern()
 function install_appcode()
 {
     install_homebrew
-    path=/Applications/AppCode.app
-    if ! [ -d $path ]
+    path='/Applications/AppCode.app'
+    if ! [ -d "$path" ]
     then
         brew cask install appcode
     fi
