@@ -107,35 +107,44 @@ function install_node()
 function install_flutter()
 {
     install_homebrew
-    brew install flutter
+    if ! [ -x "$(command -v flutter)" ]
+    then
+        echo "install flutter"
+        # 修改环境
+        echo export PUB_HOSTED_URL=https://pub.flutter-io.cn >> ~/.zshrc
+        echo export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn >> ~/.zshrc
+        echo export PATH=~/Develop/flutter/bin:$PATH >> ~/.zshrc
+        source ~/.zshrc
+        brew install flutter
+    fi
 }
 
 # 安装Chrome
 function install_chrome()
 {
     install_homebrew
-    brew install google-chrome
+    brew cask install google-chrome
 }
 
 # 安装Lantern
 function install_lantern()
 {
     install_homebrew
-    brew install lantern
+    brew cask install lantern
 }
 
 # 安装Appcode
 function install_appcode()
 {
     install_homebrew
-    brew install appcode
+    brew cask install appcode
 }
 
 # 安装VSCode
 function install_vscode()
 {
     install_homebrew
-    brew install visual-studio-code
+    brew cask install visual-studio-code
 }
 
 # 先判断Xcode是否已安装
@@ -143,8 +152,18 @@ xcode_path=/Applications/Xcode.app
 if  [ -d $xcode_path ]
 then
     install_tree
+    install_wget
     install_cocoapods
+    install_fastlane
     install_node
+
+    install_flutter
+
+    install_chrome
+    install_lantern
+    install_appcode
+    install_vscode
+
 else
     echo "install xcode to continue"
 fi
