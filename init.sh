@@ -36,11 +36,11 @@ function install_homebrew()
 }
 
 # 安装常用软件
-function install_application()
+function install_applications()
 {
+    install_homebrew
     brew install tree wget fastlane cocoapods
     brew cask install google-chrome lantern appcode visual-studio-code
-
 }
 
 
