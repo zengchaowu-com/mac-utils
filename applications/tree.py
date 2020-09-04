@@ -9,7 +9,7 @@ def dependencies():
     pass
 
 def check():
-    path = os.popen("which trees")
+    path = os.popen("which tree")
     return len(path.readlines()) > 0
 
 def install():
@@ -21,6 +21,5 @@ def uninstall():
         os.system("brew uninstall tree")
 
 check()
-print(check())
 install()
 uninstall()
