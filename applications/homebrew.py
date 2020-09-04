@@ -3,9 +3,12 @@
 
 import os
 import system.gem_sources
+import system.hosts
 
 def dependencies():
     gem_sources.ruby_china()
+    hosts.raw_githubusercontent_com()
+    hosts.api_github_com()
     pass
 
 def check():
