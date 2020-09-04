@@ -4,15 +4,16 @@
 import os
 import homebrew
 
-def dependencies()
+def dependencies():
     homebrew.install()
     pass
 
 def check():
-    return False
+    path = os.system("which tree")
+    return path
 
 def install():
-    os.system("brew install tree")
+    
     pass
 
 def uninstall():

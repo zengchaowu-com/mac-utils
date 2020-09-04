@@ -3,7 +3,7 @@
 
 import os
 
-def dependencies()
+def dependencies():
     pass
 
 def check():
