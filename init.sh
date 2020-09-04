@@ -30,8 +30,8 @@ function update_hosts()
 # 安装Homebrew
 function install_homebrew()
 {
-    update_hosts
     update_gem_sources
+    update_hosts
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 }
 
@@ -47,7 +47,7 @@ function install_applications()
 # 先判断Xcode是否已安装
 xcode_path=/Applications/Xcode.app
 if  [ -d $xcode_path ];then
-    update_hosts
+    install_applications
 else
     echo "install xcode to continue"
 fi
