@@ -136,6 +136,17 @@ function install_appcode()
     fi
 }
 
+# 安装AndroidStudio
+function install_studio()
+{
+    install_homebrew
+    path='/Applications/Visual Studio Code.app'
+    if ! [ -d "$path" ]
+    then
+        brew cask install android-studio
+    fi
+}
+
 # 安装VSCode
 function install_vscode()
 {
