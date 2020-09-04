@@ -135,7 +135,7 @@ function install_flutter()
 function install_chrome()
 {
     install_homebrew
-    path=/Applications/Google\ Chrome.app
+    path="""/Applications/Google Chrome.app"""
     if ! [ -d $path ]
     then
         brew cask install google-chrome
@@ -168,7 +168,7 @@ function install_appcode()
 function install_vscode()
 {
     install_homebrew
-    path=/Applications/Visual\ Studio\ Code.app
+    path="""/Applications/Visual Studio Code.app"""
     if ! [ -d $path ]
     then
         brew cask install visual-studio-code
