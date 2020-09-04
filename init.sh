@@ -8,12 +8,12 @@ function update_hosts()
     sudo chmod 777 /etc/hosts
 
     record=`cat /etc/hosts | grep raw.githubusercontent.com`
-    if [ -z $record ];then
+    if [ ${#record} = 0 ];then
         sudo echo 151.101.108.133 raw.githubusercontent.com >> /etc/hosts
     fi
 
     record=`cat /etc/hosts | grep api.github.com`
-    if [ -z $record ];then
+    if [ ${#record} = 0 ];then
         sudo echo 13.250.94.254 api.github.com >> /etc/hosts
     fi
     
