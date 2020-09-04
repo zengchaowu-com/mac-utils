@@ -165,7 +165,11 @@ function install_appcode()
 function install_vscode()
 {
     install_homebrew
-    brew cask install visual-studio-code
+    path=/Applications/Visual\ Studio\ Code.app
+    if ! [ -d $path ]
+    then
+        brew cask install visual-studio-code
+    fi
 }
 
 # 先判断Xcode是否已安装
