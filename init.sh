@@ -1,6 +1,12 @@
 #!/bin/bash
 # 初始化系统 此脚本用于第一次初始化电脑
 
+# 修改Gem源
+function update_gem_sources()
+{
+    gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+}
+
 # 修改Hosts
 function update_hosts()
 {
