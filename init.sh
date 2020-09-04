@@ -47,11 +47,33 @@ function install_homebrew()
     fi
 }
 
+# 安装tree
+function install_tree()
+{
+    install_homebrew
+    if ! [ -x "$(command -v tree)" ]
+    then
+        echo "install tree"
+        brew install tree
+    fi
+}
+
+# 安装wget
+function install_wget()
+{
+    install_homebrew
+    if ! [ -x "$(command -v wget)" ]
+    then
+        echo "install wget"
+        brew install wget
+    fi
+}
+
 # 安装cocoapods
 function install_cocoapods()
 {
     install_homebrew
-    if ! [ -x "$(command -v cocoapods)" ]
+    if ! [ -x "$(command -v pod)" ]
     then
         echo "install cocoapods"
         brew install cocoapods
@@ -66,17 +88,6 @@ function install_fastlane()
     then
         echo "install fastlane"
         brew install fastlane
-    fi
-}
-
-# 安装tree
-function install_tree()
-{
-    install_homebrew
-    if ! [ -x "$(command -v tree)" ]
-    then
-        echo "install tree"
-        brew install tree
     fi
 }
 
